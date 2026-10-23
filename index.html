@@ -1,242 +1,504 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nexvory | Tecnologia e Comércio Digital</title>
-  <meta name="description" content="Conheça ferramentas digitais e soluções com inteligência artificial para trabalhar na internet.">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #0b0b12;
-      color: #f5f3ff;
-      line-height: 1.6;
-    }
+    <title>Nexvory | Tecnologia e Comércio Digital</title>
 
-    header {
-      padding: 24px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #272438;
-    }
+    <meta name="description" content="Conheça a Nexvory: soluções digitais, inteligência artificial e recursos para explorar novas possibilidades no ambiente online.">
 
-    .logo {
-      font-size: 25px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      color: #b99aff;
-    }
+    <meta name="theme-color" content="#0b0912">
 
-    nav a {
-      color: #f5f3ff;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 14px;
-    }
+    <style>
+        :root {
+            --fundo: #0b0912;
+            --superficie: #151120;
+            --roxo: #a855f7;
+            --roxo-claro: #c084fc;
+            --texto: #f7f3ff;
+            --texto-suave: #b9b2c8;
+            --borda: rgba(192, 132, 252, 0.18);
+        }
 
-    .hero {
-      padding: 100px 8%;
-      text-align: center;
-      background: radial-gradient(ellipse at top, #30204f, #0b0b12 70%);
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .tag {
-      color: #c5a8ff;
-      font-size: 13px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    h1 {
-      font-size: clamp(36px, 6vw, 64px);
-      line-height: 1.1;
-      margin: 24px auto;
-      max-width: 850px;
-    }
+        body {
+            background: var(--fundo);
+            color: var(--texto);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
 
-    h1 span {
-      color: #b99aff;
-    }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-    .hero p {
-      max-width: 620px;
-      margin: 0 auto 30px;
-      color: #c4c0d2;
-      font-size: 18px;
-    }
+        .container {
+            width: min(1100px, 90%);
+            margin: 0 auto;
+        }
 
-    .button {
-      display: inline-block;
-      background: #a783ff;
-      color: #151020;
-      padding: 14px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+        header {
+            border-bottom: 1px solid var(--borda);
+            background: rgba(11, 9, 18, 0.95);
+        }
 
-    section {
-      padding: 70px 8%;
-    }
+        nav {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
 
-    .section-title {
-      text-align: center;
-      font-size: 32px;
-      margin-bottom: 16px;
-    }
+        .logo {
+            font-size: 1.65rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
 
-    .section-description {
-      text-align: center;
-      color: #b7b2c7;
-      margin: 0 auto 35px;
-      max-width: 600px;
-    }
+        .logo span {
+            color: var(--roxo-claro);
+        }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 22px;
-    }
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+            color: var(--texto-suave);
+            font-size: 0.92rem;
+        }
 
-    .card {
-      padding: 28px;
-      border: 1px solid #302943;
-      border-radius: 14px;
-      background: #14131e;
-    }
+        .menu a:hover {
+            color: var(--roxo-claro);
+        }
 
-    .card h3 {
-      margin-bottom: 12px;
-      color: #c5a8ff;
-    }
+        .botao {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 9px;
+            font-weight: 700;
+            text-align: center;
+            transition: transform 0.2s, background 0.2s;
+        }
 
-    .card p {
-      color: #c4c0d2;
-    }
+        .botao:hover {
+            transform: translateY(-2px);
+        }
 
-    .product {
-      text-align: center;
-      background: #14111f;
-      border-top: 1px solid #302943;
-      border-bottom: 1px solid #302943;
-    }
+        .botao-principal {
+            background: var(--roxo);
+            color: white;
+        }
 
-    .product-box {
-      max-width: 700px;
-      margin: 30px auto 0;
-      padding: 35px;
-      border: 1px solid #45335f;
-      border-radius: 16px;
-      background: #1a1726;
-    }
+        .botao-principal:hover {
+            background: #9333ea;
+        }
 
-    .product-box p {
-      color: #c4c0d2;
-      margin: 15px 0 25px;
-    }
+        .botao-secundario {
+            border: 1px solid var(--borda);
+            color: var(--texto);
+        }
 
-    footer {
-      padding: 30px 8%;
-      text-align: center;
-      color: #a7a1b7;
-      font-size: 13px;
-    }
+        .hero {
+            padding: 100px 0 90px;
+            text-align: center;
+            background:
+                radial-gradient(
+                    ellipse at top,
+                    rgba(126, 34, 206, 0.20),
+                    transparent 65%
+                );
+        }
 
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        gap: 12px;
-      }
+        .etiqueta {
+            display: inline-block;
+            padding: 7px 13px;
+            border: 1px solid var(--borda);
+            border-radius: 30px;
+            color: var(--roxo-claro);
+            background: rgba(168, 85, 247, 0.08);
+            font-size: 0.85rem;
+            margin-bottom: 24px;
+        }
 
-      nav a {
-        margin: 0 8px;
-      }
+        h1 {
+            max-width: 850px;
+            margin: 0 auto 22px;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
 
-      .hero {
-        padding: 70px 6%;
-      }
+        h1 span {
+            color: var(--roxo-claro);
+        }
 
-      section {
-        padding: 50px 6%;
-      }
-    }
-  </style>
+        .hero p {
+            max-width: 680px;
+            margin: 0 auto 30px;
+            color: var(--texto-suave);
+            font-size: 1.1rem;
+        }
+
+        .botoes {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        section {
+            padding: 75px 0;
+        }
+
+        .titulo-secao {
+            text-align: center;
+            margin-bottom: 42px;
+        }
+
+        .titulo-secao h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 12px;
+        }
+
+        .titulo-secao p {
+            color: var(--texto-suave);
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .grade {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .cartao {
+            padding: 28px;
+            background: var(--superficie);
+            border: 1px solid var(--borda);
+            border-radius: 16px;
+        }
+
+        .icone {
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            background: rgba(168, 85, 247, 0.13);
+            font-size: 1.5rem;
+        }
+
+        .cartao h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .cartao p {
+            color: var(--texto-suave);
+            font-size: 0.96rem;
+        }
+
+        .produto {
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(126, 34, 206, 0.12),
+                    transparent 70%
+                );
+        }
+
+        .produto-caixa {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 42px;
+            border: 1px solid var(--borda);
+            border-radius: 20px;
+            background: var(--superficie);
+            text-align: center;
+        }
+
+        .produto-caixa .icone {
+            margin: 0 auto 20px;
+        }
+
+        .produto-caixa h3 {
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            margin-bottom: 15px;
+        }
+
+        .produto-caixa p {
+            max-width: 600px;
+            margin: 0 auto 25px;
+            color: var(--texto-suave);
+        }
+
+        .observacao {
+            display: block;
+            margin-top: 16px;
+            color: var(--texto-suave);
+            font-size: 0.82rem;
+        }
+
+        .sobre {
+            text-align: center;
+        }
+
+        .sobre p {
+            max-width: 760px;
+            margin: 0 auto;
+            color: var(--texto-suave);
+        }
+
+        footer {
+            padding: 30px 0;
+            border-top: 1px solid var(--borda);
+            color: var(--texto-suave);
+            font-size: 0.88rem;
+        }
+
+        .rodape {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        @media (max-width: 760px) {
+            nav {
+                padding: 18px 0;
+                flex-direction: column;
+            }
+
+            .menu {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+
+            .hero {
+                padding: 75px 0 65px;
+            }
+
+            .grade {
+                grid-template-columns: 1fr;
+            }
+
+            .cartao {
+                padding: 24px;
+            }
+
+            .produto-caixa {
+                padding: 28px 20px;
+            }
+
+            .rodape {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-  <header>
-    <div class="logo">NEXVORY</div>
-    <nav>
-      <a href="#inicio">Início</a>
-      <a href="#solucoes">Soluções</a>
-      <a href="#produto">Produto</a>
-    </nav>
-  </header>
+    <header>
+        <div class="container">
+            <nav>
+                <a class="logo" href="#inicio">Nex<span>vory</span></a>
 
-  <main>
-    <section class="hero" id="inicio">
-      <div class="tag">Tecnologia e Comércio Digital</div>
-      <h1>Novas possibilidades para sua jornada <span>digital.</span></h1>
-      <p>
-        Descubra ferramentas, estratégias e recursos digitais
-        para explorar oportunidades de trabalho e criação na internet.
-      </p>
-      <a class="button" href="#solucoes">Conheça nossas soluções</a>
-    </section>
+                <div class="menu">
+                    <a href="#solucoes">Soluções</a>
+                    <a href="#produtos">Produtos</a>
+                    <a href="#sobre">Sobre nós</a>
+                </div>
 
-    <section id="solucoes">
-      <h2 class="section-title">Tecnologia ao seu alcance</h2>
-      <p class="section-description">
-        Recursos digitais para aprender, criar e desenvolver seus projetos.
-      </p>
+                <a class="botao botao-secundario" href="#produtos">
+                    Explorar produtos
+                </a>
+            </nav>
+        </div>
+    </header>
 
-      <div class="cards">
-        <article class="card">
-          <h3>Inteligência Artificial</h3>
-          <p>Conheça maneiras de usar ferramentas de IA para facilitar tarefas e desenvolver ideias.</p>
-        </article>
+    <main>
+        <section class="hero" id="inicio">
+            <div class="container">
+                <span class="etiqueta">
+                    Tecnologia e Comércio Digital
+                </span>
 
-        <article class="card">
-          <h3>Produtos Digitais</h3>
-          <p>Explore materiais e recursos para aprender novas habilidades no ambiente digital.</p>
-        </article>
+                <h1>
+                    O futuro digital começa com
+                    <span>novas possibilidades.</span>
+                </h1>
 
-        <article class="card">
-          <h3>Estratégias Online</h3>
-          <p>Descubra métodos para organizar projetos e explorar oportunidades na internet.</p>
-        </article>
-      </div>
-    </section>
+                <p>
+                    Explore recursos digitais, conheça ferramentas de
+                    inteligência artificial e descubra soluções para
+                    desenvolver suas habilidades no ambiente online.
+                </p>
 
-    <section class="product" id="produto">
-      <h2 class="section-title">Conheça nosso primeiro produto</h2>
+                <div class="botoes">
+                    <a class="botao botao-principal" href="#produtos">
+                        Conhecer produtos
+                    </a>
 
-      <div class="product-box">
-        <div class="tag">Produto digital</div>
-        <h2>Máquina de Renda Passiva com IA</h2>
-        <p>
-          Um material para conhecer aplicações de inteligência artificial
-          e explorar ideias de projetos digitais. Os resultados dependem
-          da aplicação, do contexto e de fatores individuais.
-        </p>
-        <a class="button" href="mailto:contato@nexvory.com.br?subject=Quero%20saber%20mais%20sobre%20o%20produto">
-          Tenho interesse
-        </a>
-      </div>
-    </section>
-  </main>
+                    <a class="botao botao-secundario" href="#solucoes">
+                        Conhecer a Nexvory
+                    </a>
+                </div>
+            </div>
+        </section>
 
-  <footer>
-    <p>Nexvory — Tecnologia e Comércio Digital</p>
-    <p>© 2026 Nexvory. Todos os direitos reservados.</p>
-  </footer>
+        <section id="solucoes">
+            <div class="container">
+                <div class="titulo-secao">
+                    <h2>Explore o universo digital</h2>
+
+                    <p>
+                        Conhecimento, tecnologia e recursos digitais
+                        reunidos para ajudar você a explorar novas ideias.
+                    </p>
+                </div>
+
+                <div class="grade">
+                    <article class="cartao">
+                        <div class="icone" aria-hidden="true">✦</div>
+
+                        <h3>Inteligência artificial</h3>
+
+                        <p>
+                            Conheça ferramentas de IA e descubra maneiras
+                            de utilizá-las para apoiar tarefas e projetos.
+                        </p>
+                    </article>
+
+                    <article class="cartao">
+                        <div class="icone" aria-hidden="true">◇</div>
+
+                        <h3>Produtos digitais</h3>
+
+                        <p>
+                            Explore materiais e recursos digitais pensados
+                            para apoiar seu aprendizado e desenvolvimento.
+                        </p>
+                    </article>
+
+                    <article class="cartao">
+                        <div class="icone" aria-hidden="true">↗</div>
+
+                        <h3>Estratégias online</h3>
+
+                        <p>
+                            Aprenda conceitos e conheça ferramentas que
+                            podem ajudar na criação de projetos digitais.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="produto" id="produtos">
+            <div class="container">
+                <div class="titulo-secao">
+                    <h2>Conheça nossos produtos</h2>
+
+                    <p>
+                        Recursos digitais para aprender, experimentar
+                        ferramentas e desenvolver novas ideias.
+                    </p>
+                </div>
+
+                <div class="produto-caixa">
+                    <div class="icone" aria-hidden="true">🤖</div>
+
+                    <h3>Máquina de Renda Passiva com IA</h3>
+
+                    <p>
+                        Conheça uma proposta de aprendizado sobre
+                        inteligência artificial e estratégias para projetos
+                        digitais. Descubra o conteúdo e avalie se ele faz
+                        sentido para seus objetivos.
+                    </p>
+
+                    <!-- O link de compra será adicionado posteriormente. -->
+                    <a class="botao botao-principal" href="#contato">
+                        Quero saber mais
+                    </a>
+
+                    <span class="observacao">
+                        Os resultados variam conforme a aplicação,
+                        as condições individuais e outros fatores.
+                        Não há garantia de renda.
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <section class="sobre" id="sobre">
+            <div class="container">
+                <div class="titulo-secao">
+                    <h2>Sobre a Nexvory</h2>
+                </div>
+
+                <p>
+                    A Nexvory é uma marca voltada à tecnologia e ao
+                    comércio digital, com foco em apresentar recursos,
+                    ferramentas e produtos digitais de maneira acessível.
+                    Nosso objetivo é facilitar o acesso ao conhecimento
+                    e incentivar a exploração responsável das possibilidades
+                    do mundo online.
+                </p>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="container">
+                <div class="titulo-secao">
+                    <h2>Vamos conversar?</h2>
+
+                    <p>
+                        Tem dúvidas sobre nossos produtos ou deseja
+                        saber mais sobre a Nexvory? Entre em contato.
+                    </p>
+                </div>
+
+                <div class="botoes">
+                    <!-- Substituiremos pelo endereço de contato real. -->
+                    <a class="botao botao-secundario"
+                       href="mailto:contato@nexvory.com.br">
+                        Enviar e-mail
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container rodape">
+            <a class="logo" href="#inicio">Nex<span>vory</span></a>
+
+            <p>
+                © 2026 Nexvory. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
 
 </body>
 </html>
+```
